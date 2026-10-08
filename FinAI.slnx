@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/FinAI.AIWorker.Service/FinAI.AIWorker.Service.csproj" />
+    <Project Path="src/FinAI.BuildingBlocks/FinAI.BuildingBlocks.csproj" />
+    <Project Path="src/FinAI.Core.API/FinAI.Core.API.csproj" />
+  </Folder>
+</Solution>

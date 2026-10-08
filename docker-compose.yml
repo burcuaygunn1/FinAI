@@ -1,0 +1,55 @@
+networks:
+  finai-network:
+    driver: bridge
+
+services:
+  # 1. Relational Database - PostgreSQL
+  postgres:
+    image: postgres:16-alpine
+    container_name: finai-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: finai_user
+      POSTGRES_PASSWORD: finai_password
+      POSTGRES_DB: FinAIDb
+    ports:
+      - "5433:5432"
+    networks:
+      - finai-network
+
+  # 2. Document Database - MongoDB
+  mongodb:
+    image: mongo:latest
+    container_name: finai-mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin_password
+    ports:
+      - "27017:27017"
+    networks:
+      - finai-network
+
+  # 3. Cache - Redis
+  redis:
+    image: redis:alpine
+    container_name: finai-redis
+    restart: always
+    ports:
+      - "6379:6379"
+    networks:
+      - finai-network
+
+  # 4. Message Queue - RabbitMQ (Management UI ile)
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: finai-rabbitmq
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    ports:
+      - "5672:5672"   # AMQP Mesajlaşma Portu (C# .NET buraya bağlanacak)
+      - "15672:15672" # RabbitMQ Yönetim Arayüzü (Tarayıcıdan gireceğimiz panel)
+    networks:
+      - finai-network

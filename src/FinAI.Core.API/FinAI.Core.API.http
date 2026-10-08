@@ -1,0 +1,6 @@
+@FinAI.Core.API_HostAddress = http://localhost:5023
+
+GET {{FinAI.Core.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
