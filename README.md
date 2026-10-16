@@ -19,7 +19,7 @@ Proje; yüksek performans, ölçeklenebilirlik ve gerçek zamanlı kullanıcı d
 
 ---
 
-## 💡 Sistem Nasıl Çalışır? (İşleyiş Akışı)
+## 💡 İşleyiş Akışı
 
 1. **Fatura Yükleme:** Kullanıcı arayüz veya API üzerinden yeni bir fatura/harcama verisi yükler.
 2. **Event Publishing:** API, bu işlemi bir event olarak **RabbitMQ** mesaj kuyruğuna iletir.
@@ -69,7 +69,7 @@ npm run dev
 
 ---
 
-## 🔌 API Uç Noktaları (Özet)
+## 🔌 API Uç Noktaları 
 
 | HTTP Metodu | Uç Nokta | Açıklama |
 | :--- | :--- | :--- |
