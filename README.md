@@ -36,7 +36,7 @@ Proje; yüksek performans, ölçeklenebilirlik ve gerçek zamanlı kullanıcı d
 * Node.js (v18+) & npm
 * Docker & Docker Compose *(PostgreSQL, MongoDB, Redis ve RabbitMQ için)*
 
-### 1. Servislerin Başlatılması (Docker)
+### 1. Servislerin Başlatılması 
 Bağımlı servisleri (PostgreSQL, MongoDB, Redis, RabbitMQ) ayağa kaldırmak için:
 ```bash
 docker-compose up -d
